@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Biblioteca.Models.LibroXautor>
+
+@{
+    ViewData["Title"] = "Asignaciones de autores";
+}
+
+<h1>Listado</h1>
+
+<p>
+    <a asp-action="Create">Asignar nuevo</a>
+</p>
+<table class="table" id="table_id">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AutorNavigation.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibroNavigation.Titulo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AutorNavigation.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LibroNavigation.Titulo)
+            </td>
+            <td>
+                @Html.ActionLink("Detalle", "Details", new { id1=item.AutorNavigation.Id,id2= item.LibroNavigation.Id }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Eliminar", "Delete", new { id1=item.AutorNavigation.Id,id2= item.LibroNavigation.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

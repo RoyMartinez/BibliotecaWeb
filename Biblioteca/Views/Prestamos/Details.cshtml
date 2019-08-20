@@ -1,0 +1,47 @@
+﻿@model Biblioteca.Models.Prestamo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles del prestamo</h1>
+
+<div>
+    <h4>Prestamo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaPrestamo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaPrestamo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaDevolucion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaDevolucion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Devuelto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Devuelto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EstudianteNavigation.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EstudianteNavigation.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LibroNavigation.Titulo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LibroNavigation.Titulo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>

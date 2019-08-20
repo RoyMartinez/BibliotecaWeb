@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Biblioteca.Models.Estudiante>
+
+@{
+    ViewData["Title"] = "Indice de Estudiantes";
+}
+
+<h1>Listado</h1>
+
+<p>
+    <a asp-action="Create">Ingresar Nuevo</a>
+</p>
+<table class="table" id="table_id">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Carnet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarreraNavigation.Nombre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carnet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarreraNavigation.Nombre)
+            </td>
+            <td>
+                <a class="btn btn-info"  asp-action="Details" asp-route-id="@item.Id">Detalles</a>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                <a class="btn btn-danger"  asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

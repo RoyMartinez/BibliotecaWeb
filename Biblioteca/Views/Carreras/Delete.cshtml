@@ -1,0 +1,27 @@
+﻿@model Biblioteca.Models.Carrera
+
+@{
+    ViewData["Title"] = "Eliminar Carrera";
+}
+
+<h1>Eliminar</h1>
+
+<h3>Esta seguro de querer eliminar?</h3>
+<div>
+    <h4>Carrera</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Regresar</a>
+    </form>
+</div>

@@ -1,0 +1,33 @@
+﻿@model Biblioteca.Models.Autor
+
+@{
+    ViewData["Title"] = "Eliminar Autor";
+}
+
+<h1>Eliminar</h1>
+
+<h3>Esta Seguro de querer eliminar?</h3>
+<div>
+    <h4>Autor</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NacionalidadNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NacionalidadNavigation.Nacionalidad1)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Regresar</a>
+    </form>
+</div>

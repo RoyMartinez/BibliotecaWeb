@@ -1,0 +1,30 @@
+﻿@model Biblioteca.Models.Autor
+
+@{
+    ViewData["Title"] = "Detalle de Autores";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Autor</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NacionalidadNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NacionalidadNavigation.Nacionalidad1)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-info"  asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Regresar</a>
+</div>

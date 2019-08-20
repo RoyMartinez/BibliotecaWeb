@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Biblioteca.Models.Prestamo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listado</h1>
+
+<p>
+    <a asp-action="Create">Ingresar Nuevo</a>
+</p>
+<table class="table" id="table_id">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EstudianteNavigation.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibroNavigation.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaDevolucion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstudianteNavigation.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LibroNavigation.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaDevolucion)
+            </td>
+            <td>
+                @Html.ActionLink("Detalle", "Details", new { id1 = item.EstudianteNavigation.Id, id2 = item.LibroNavigation.Id }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Editar", "Edit", new { id1 = item.EstudianteNavigation.Id, id2 = item.LibroNavigation.Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Eliminar", "Delete", new { id1 = item.EstudianteNavigation.Id, id2 = item.LibroNavigation.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

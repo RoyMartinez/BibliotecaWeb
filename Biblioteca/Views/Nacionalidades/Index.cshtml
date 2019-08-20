@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Biblioteca.Models.Nacionalidad>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listado</h1>
+
+<p>
+    <a asp-action="Create">Ingresar Nuevo</a>
+</p>
+<table class="table" id="table_id">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nacionalidad1)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nacionalidad1)
+            </td>
+            <td>
+                <a class="btn btn-info"  asp-action="Details" asp-route-id="@item.Id">Detalles</a>
+                <a class="btn btn-primary"  asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                <a class="btn btn-danger"  asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

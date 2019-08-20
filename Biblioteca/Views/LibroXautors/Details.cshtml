@@ -1,0 +1,29 @@
+﻿@model Biblioteca.Models.LibroXautor
+
+@{
+    ViewData["Title"] = "Detalle de la asignacion";
+}
+
+<h1>Detalle de asignacion</h1>
+
+<div>
+    <h4>Asignacion</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AutorNavigation.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AutorNavigation.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LibroNavigation.Titulo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LibroNavigation.Titulo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
